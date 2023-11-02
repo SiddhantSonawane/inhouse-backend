@@ -1,17 +1,13 @@
-const express = require('express');
-const dotenv = require('dotenv').config();
-
+const express = require("express");
+const mysqlConnection = require("./config/mysql");
+// const importCsv = require("./csvManager/importCsv");
+const exportCsv = require("./csvManager/exportCsv");
+const dotenv = require("dotenv").config();
 
 const app = express();
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
-
-app.listen(port, ()=>{
-    console.log(`listening on port ${port}`);
-})
-
-
-//creating connection to mysql
-const mysqlConnection = require('../proj-backend/csvManager/mysql')
-const importCsv = require('../proj-backend/csvManager/importCsv')
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
